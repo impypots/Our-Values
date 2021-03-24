@@ -1,0 +1,56 @@
+* {
+    background: lightgray;
+    font-family: 'Poppins', sans-serif;
+    margin: 0.75vw 1vw;
+}
+
+h1 {
+    text-align: center;
+    background: white;
+    height: 10vh;
+    line-height: 10vh;
+}
+
+.value {
+    border: 1px rgb(125, 16, 228) solid;
+    padding: 1.5%;
+    margin: 0.75vw auto;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 9vh;
+    box-sizing: border-box;
+}
+
+.circle {
+    background: linear-gradient(rgb(125, 16, 228), rgb(206, 14, 206));
+    height: 3vh;
+    width: 3vh;
+    border-radius: 50%;
+    transition: 0.4s ease-in;
+}
+
+.circle div {
+    position: relative;
+    clip-path: polygon(5% 40%, 40% 40%, 40% 5%, 60% 5%, 60% 40%, 95% 40%, 95% 60%, 60% 60%, 60% 95%, 40% 95%, 40% 60%, 5% 60%);
+    background: lightgray;
+    height: 50%;
+    width: 50%;
+    margin: 25%;
+}
+
+.value:hover .circle {
+    transform: rotate(225deg);
+}
+
+.value-text {
+   width: 45%;
+   margin: 0.75vw auto;
+   line-height: 32px;
+}
+
+.hidden {
+    display: none;
+}
