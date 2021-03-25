@@ -2,7 +2,6 @@
     background: lightgray;
     font-family: 'Poppins', sans-serif;
     margin: 0 0;
-    overflow-y: hidden;
 }
 
 h1 {
@@ -17,7 +16,7 @@ h1 {
 .value {
     border: 1px rgb(125, 16, 228) solid;
     padding: 1.5%;
-    margin: 0.75vw auto;
+    margin: 0.75vw 25vw;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -33,6 +32,7 @@ h1 {
     width: 3vh;
     border-radius: 50%;
     transition: 0.4s ease-in;
+    pointer-events: initial;
 }
 
 .circle div {
@@ -42,17 +42,18 @@ h1 {
     height: 50%;
     width: 50%;
     margin: 25%;
+    pointer-events: initial;
 }
 
 .value:hover .circle {
     transform: rotate(225deg);
 }
 
-.value:hover + .value-text {
+/* .value:hover + .value-text {
     opacity: 100%;
     position: static;
     max-height: 300px;
-}
+} */
 
 .value-text {
    width: 45%;
@@ -60,39 +61,57 @@ h1 {
    margin: 0.75vw auto;
    line-height: 32px;
    opacity: 0%;
-   transition: max-height 0.4 ease-in;
-   
+   transition: 0.4 ease-in;
    pointer-events: none;
 }
 
 .radio-test {
-    border-radius: 0;
     display: block;
-    width: 50vw;
     height: 9vh;
-    margin: 0.75vw auto;
+    width: 50vw;
+    margin: 0.75vw 0;
     outline: 1px solid red;
     position: absolute;
-    z-index: 1;
+    left: 0;
+    cursor: pointer;
+    pointer-events: initial;
+    box-sizing: border-box;
+    opacity: 0;
 }
 
 .radio-test:focus {
     background-color:red;
 }
 
-span {
-    display: none;
+.div-text {
+    position: relative;
+    bottom: -11vh;
+    left: -55%;
+    top: 5vw;
+    min-width: 45vw;
+    line-height: 32px;
+    transform: scaleY(0);
+    transition: transform 0.4s ease-in;
 }
 
-.radio-test:focus + span {
-    display: inline;
+.radio-test:focus + .div-text {
+    transform: scaleY(1);
+}
+
+.radio-test:focus {
+    height: 18vh;
+}
+
+.span-value {
+    min-width: 50ch;
+    pointer-events: none;
+    transition: color 0.4s ease;
 }
 
 .value-radio {
     border: 1px rgb(125, 16, 228) solid;
     padding: 1.5%;
-    margin: 0.75vw auto;
-    cursor: pointer;
+    margin: 0.75vw 25vw;
     display: flex;
     justify-content: space-between;
     background:rgba(0,0,0,0);
@@ -100,6 +119,11 @@ span {
     width: 50vw;
     height: 9vh;
     box-sizing: border-box;
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: initial;
+    z-index: 1;
+    position: relative;
+}
+
+.radio-test:hover + .circle {
+    transform: rotate(225deg);
 }
