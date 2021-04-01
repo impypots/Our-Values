@@ -57,7 +57,7 @@ h1 {
 
 .value-text {
    width: 45%;
-   max-height: 0px;
+   height: 0px;
    margin: 0.75vw auto;
    line-height: 32px;
    opacity: 0%;

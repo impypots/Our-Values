@@ -4,7 +4,7 @@ let value = document.getElementsByClassName("value");
 let clickFunc = function() {
     alert("this clicked")
     var menu = this.querySelector('.value-text');
-    menu.classList.toggle("hidden");
+    menu.style.height = '100px';
 }
 
 
